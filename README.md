@@ -114,7 +114,56 @@ $ sudo nano /etc/apache2/apache2.conf
 
 ---
 
-# Instalação do Laravel
+# Clone do projeto
+```sh
+$ git clone https://github.com/luzmoraes/Start-Project-API.git
+```
+
+### Install
+```sh
+$ cd Start-Project-API
+$ composer install
+```
+
+##### Gerar arquivo .env
+1. Abrir o arquivo __.env.example__ e salvar como __.env__;
+
+##### Banco de dados
+1. Criar banco de dados;
+2. informar os dados do banco de dados no __.env__;
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_start_project
+DB_USERNAME=
+DB_PASSWORD=
+```
+
+##### Gerar Chave
+```sh
+$ php artisan key:generate
+```
+
+##### Exucutar Migrate
+```sh
+$ php artisan migrate
+```
+
+##### Exucutar Seed
+```sh
+$ php artisan db::seed
+```
+
+##### Run Server
+```sh
+$ php artisan serve
+```
+
+---
+
+# Criação do Projeto passo a passo
+## Instalação do Laravel
 #### Versão 5.8 no meomento [Documentação](https://laravel.com/docs/5.8/installation)
 ```
 composer create-project --prefer-dist laravel/laravel project-name
@@ -315,4 +364,8 @@ Authorization: Bearer _TOKEN
 
 ### Ativando o CORS
 Instalar a biblioteca [https://github.com/barryvdh/laravel-cors](https://github.com/barryvdh/laravel-cors).
+
+
+
+
 
