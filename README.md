@@ -152,7 +152,35 @@ $ php artisan migrate
 
 ##### Exucutar Seed
 ```sh
-$ php artisan db::seed
+$ php artisan db:seed
+```
+
+##### Gerar Client secret (passport)
+```sh
+$ php artisan pasport:install
+
+# Saída
+Personal access client created successfully.
+Client ID: 1
+Client secret: sqdPI6R8MUyRqgMrSt0B9hXTPCcG9HuN6UBC27Lg
+Password grant client created successfully.
+Client ID: 2
+Client secret: gUuXd05wbnpuahu5VzlnK718T6qq2Tj2uhXe8BxX
+```
+Copie o Client secret do ID 2 e cole no environment do Angular
+```
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8000',
+  clientInfo: {
+    "grant_type": "password",
+    "client_id": 2,
+    "client_secret": "gUuXd05wbnpuahu5VzlnK718T6qq2Tj2uhXe8BxX",
+    "username": "",
+    "password": "",
+    "scope": ""
+  }
+};
 ```
 
 ##### Run Server
