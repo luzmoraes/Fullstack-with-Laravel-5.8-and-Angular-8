@@ -340,6 +340,23 @@ $params = [
 # Route: 127.0.0.1:8000/oauth/token
 ```
 
+#### Alterar configuração da autenticação para Passport
+```
+'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+        'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+            'hash' => false,
+        ],
+    ],
+```
+
+
 #### User Controller
 ```sh
 $ php artisan make:controller Api/UserController --resource
