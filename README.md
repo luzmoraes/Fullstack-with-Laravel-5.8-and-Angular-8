@@ -342,6 +342,8 @@ $params = [
 
 #### Alterar configuração da autenticação para Passport
 ```
+# config/auth.php
+
 'guards' => [
         'web' => [
             'driver' => 'session',
